@@ -206,14 +206,26 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/device_info/device_info.framework",
+				"${BUILT_PRODUCTS_DIR}/flutter_full_pdf_viewer/flutter_full_pdf_viewer.framework",
+				"${BUILT_PRODUCTS_DIR}/flutter_html_to_pdf/flutter_html_to_pdf.framework",
 				"${BUILT_PRODUCTS_DIR}/native_pdf_renderer/native_pdf_renderer.framework",
+				"${BUILT_PRODUCTS_DIR}/open_file/open_file.framework",
+				"${BUILT_PRODUCTS_DIR}/path_provider/path_provider.framework",
+				"${BUILT_PRODUCTS_DIR}/printing/printing.framework",
 				"${BUILT_PRODUCTS_DIR}/syncfusion_flutter_pdfviewer/syncfusion_flutter_pdfviewer.framework",
+				"${BUILT_PRODUCTS_DIR}/url_launcher/url_launcher.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/device_info.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/flutter_full_pdf_viewer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/flutter_html_to_pdf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/native_pdf_renderer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/open_file.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/path_provider.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/printing.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/syncfusion_flutter_pdfviewer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/url_launcher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

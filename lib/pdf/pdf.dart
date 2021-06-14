@@ -2,6 +2,7 @@ import 'dart:typed_data';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_html_to_pdf/flutter_html_to_pdf.dart';
 import 'package:flutter_ui/pdf/report.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/pdf.dart';
@@ -18,6 +19,7 @@ class Pdf extends StatefulWidget {
 }
 
 class _PdfState extends State<Pdf> {
+  String generatedPdfFilePath;
   String path;
   String fileName= "test.pdf";
   bool show = false;
@@ -54,6 +56,7 @@ class _PdfState extends State<Pdf> {
               // await buildPdf(PdfPageFormat.a4);
               // await generateReport(PdfPageFormat.a4);
               savePdf(generateReport(PdfPageFormat.a4));
+              // await generateExampleDocument();
               setState(() {
                 show = true;
               });
@@ -137,4 +140,55 @@ Future savePdf(Future<Uint8List> data) async {
 //               'assets/Android.pdf',
 //               key: _pdfViewerKey,
 //             )
+
+  Future<void> generateExampleDocument() async {
+    final htmlContent = """
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <style>
+        table, th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
+        th, td, p {
+          padding: 5px;
+          text-align: left;
+        }
+        </style>
+      </head>
+      <body>
+        <h2>PDF Generated with flutter_html_to_pdf plugin</h2>
+        
+        <table style="width:100%">
+          <caption>Sample HTML Table</caption>
+          <tr>
+            <th>Month</th>
+            <th>Savings</th>
+          </tr>
+          <tr>
+            <td>January</td>
+            <td>100</td>
+          </tr>
+          <tr>
+            <td>February</td>
+            <td>50</td>
+          </tr>
+        </table>
+        
+        <p>Image loaded from web</p>
+        <img src="https://i.imgur.com/wxaJsXF.png" alt="web-img">
+      </body>
+    </html>
+    """;
+
+    Directory appDocDir = await getApplicationDocumentsDirectory();
+    final targetPath = appDocDir.path;
+    final targetFileName = "example-pdf";
+
+    final generatedPdfFile = await FlutterHtmlToPdf.convertFromHtmlContent(
+        htmlContent, targetPath, targetFileName);
+    generatedPdfFilePath = generatedPdfFile.path;
+    print('generatedPdfFilePath:$generatedPdfFilePath');
+  }
 }

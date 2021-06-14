@@ -12,6 +12,7 @@ Future<Uint8List> generateReport(PdfPageFormat pageFormat) async {
   const tableHeaders = ['Category', 'Budget', 'Expense', 'Result'];
   var NotoSans = await rootBundle.load("assets/NotoSans-Regular.ttf");
   var HacenTunisia = await rootBundle.load("assets/HacenTunisia.ttf");
+  var sourceHanSansSc= await rootBundle.load("assets/SourceHanSansSC.ttf");
 
   const dataTable = [
     ['Phone', 80, 95],
@@ -176,11 +177,11 @@ Future<Uint8List> generateReport(PdfPageFormat pageFormat) async {
         // Page layout
         return pw.Column(
           children: [
-            pw.Text('你好世界',
+            pw.Text("hello word",
                 style: pw.TextStyle(
                   color: baseColor,
                   fontSize: 40,
-                  font:pw.Font.ttf(NotoSans),
+                  // font:pw.Font.ttf(sourceHanSansSc),
                 )),
             pw.Divider(thickness: 4),
             pw.Expanded(flex: 3, child: chart1),

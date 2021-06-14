@@ -139,6 +139,20 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_full_pdf_viewer:
+    dependency: "direct main"
+    description:
+      name: flutter_full_pdf_viewer
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.0.6"
+  flutter_html_to_pdf:
+    dependency: "direct main"
+    description:
+      name: flutter_html_to_pdf
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.6.1"
   flutter_test:
     dependency: "direct dev"
     description: flutter

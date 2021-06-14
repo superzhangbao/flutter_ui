@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:common_utils/common_utils.dart';
+import 'package:flutter_ui/html_to_pdf/html_to_pdf.dart';
 import 'package:flutter_ui/pdf/pdf.dart';
 import 'package:flutter_ui/syncfusion/pdf_render1.dart';
 import 'package:flutter_ui/syncfusion/pdf_viewer1.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Pdf(),
+      home: HtmlToPdf(),
     );
   }
 }
