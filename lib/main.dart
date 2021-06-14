@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:common_utils/common_utils.dart';
+import 'package:flutter_ui/pdf/pdf.dart';
+import 'package:flutter_ui/syncfusion/pdf_render1.dart';
+import 'package:flutter_ui/syncfusion/pdf_viewer1.dart';
 import 'package:flutter_ui/typeface_page.dart';
 
 void main() {
@@ -16,7 +19,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter UI Demo-投影'),
+      home: Pdf(),
     );
   }
 }
@@ -73,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   blurRadius: _blurRadius,
                   spreadRadius: _spreadRadius),
               buildBoxShadow(
-                  text: '又下',
+                  text: '右下',
                   offset: Offset(_value, _value),
                   blurRadius: _blurRadius,
                   spreadRadius: _spreadRadius),
@@ -127,6 +130,12 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
+
+  // border: Border.all(width: 1, color: Colors.green,style: BorderStyle.solid),
+  // border: Border(
+  //       top: BorderSide(width: 16.0, color: Colors.amber),
+  //        bottom: BorderSide(width: 16.0, color: Colors.lightBlue.shade900),
+  // ),
   Container buildBoxShadow(
       {String text, Offset offset, double blurRadius, double spreadRadius}) {
     return Container(
@@ -135,16 +144,11 @@ class _MyHomePageState extends State<MyHomePage> {
       margin: EdgeInsets.all(10.0),
       decoration: BoxDecoration(
         color: Colors.white,
-        // borderRadius: BorderRadius.only(topLeft: Radius.circular(5.0)),
-        // border: Border.all(width: 1, color: Colors.green,style: BorderStyle.solid),
-        // border: Border(
-        //       top: BorderSide(width: 16.0, color: Colors.amber),
-        //        bottom: BorderSide(width: 16.0, color: Colors.lightBlue.shade900),
-        // ),
+        borderRadius: BorderRadius.all(Radius.circular(8.0)),
         boxShadow: [
           BoxShadow(
-            color: Colors.blueAccent,
-            offset: offset ?? Offset(1.0, 1.0), //阴影y轴偏移量
+            color: Colors.green,
+            offset: offset ?? Offset(1.0, 1.0), //阴影x,y轴偏移量
             blurRadius: blurRadius ?? 1, //阴影模糊程度
             spreadRadius: spreadRadius ?? 1, //阴影扩散程度
           )

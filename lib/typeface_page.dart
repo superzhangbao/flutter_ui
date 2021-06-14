@@ -1,8 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_ui/util.dart';
 import 'package:flutter_ui/webp_page.dart';
-
 
 class Typeface extends StatefulWidget {
   @override
@@ -31,60 +29,60 @@ class _TypefaceState extends State<Typeface> {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Text('w500'),
+                Text('字重Medium-w500'),
                 buildText(_normal),
                 Padding(
-                  padding: const EdgeInsets.only(left:8.0),
+                  padding: const EdgeInsets.only(left: 8.0),
                   child: buildText(_fontWeight500),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left:8.0),
-                  child: buildText(_fontWeight500,text: _enText),
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: buildText(_fontWeight500, text: _enText),
                 ),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Text('w600'),
+                Text('字重Semibold-w600'),
                 buildText(_normal),
                 Padding(
-                  padding: const EdgeInsets.only(left:8.0),
+                  padding: const EdgeInsets.only(left: 8.0),
                   child: buildText(_fontWeight600),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left:8.0),
-                  child: buildText(_fontWeight600,text: _enText),
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: buildText(_fontWeight600, text: _enText),
                 ),
               ],
             ),
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.end,
+            //   children: [
+            //     Text('w700-Bold'),
+            //     buildText(_normal),
+            //     Padding(
+            //       padding: const EdgeInsets.only(left: 8.0),
+            //       child: buildText(_fontWeight700),
+            //     ),
+            //     Padding(
+            //       padding: const EdgeInsets.only(left: 8.0),
+            //       child: buildText(_fontWeight700, text: _enText),
+            //     ),
+            //   ],
+            // ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Text('w700-Bold'),
+                Text('符合设计规范的字重'),
                 buildText(_normal),
                 Padding(
-                  padding: const EdgeInsets.only(left:8.0),
-                  child: buildText(_fontWeight700),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left:8.0),
-                  child: buildText(_fontWeight700,text: _enText),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text('自动转换'),
-                buildText(_normal),
-                Padding(
-                  padding: const EdgeInsets.only(left:8.0),
+                  padding: const EdgeInsets.only(left: 8.0),
                   child: buildText(fontWeightBold()),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left:8.0),
-                  child: buildText(fontWeightBold(),text: _enText),
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: buildText(fontWeightBold(), text: _enText),
                 ),
               ],
             ),
@@ -98,21 +96,19 @@ class _TypefaceState extends State<Typeface> {
     );
   }
 
-  Text buildText(FontWeight fontWeight,{String text}) {
+  Text buildText(FontWeight fontWeight, {String text}) {
     return Text(
-            text ?? _text,
-            style: TextStyle(
-              fontSize: _fontSize,
-              fontWeight: fontWeight,
-              // fontFamily: 'Source Han Sans'
-              // fontFamily: 'Roboto'
-              // fontFamily: "Courier"
-            ),
-          );
+      text ?? _text,
+      style: TextStyle(
+        fontSize: _fontSize,
+        fontWeight: fontWeight,
+      ),
+    );
   }
 
   _nextPage() {
-    Navigator.push( //跳转到第二个界面
+    Navigator.push(
+      //跳转到第二个界面
       context,
       MaterialPageRoute(builder: (context) => WebpPage()),
     );
